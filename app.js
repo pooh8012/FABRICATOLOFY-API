@@ -1,10 +1,11 @@
+require("dotenv").config();
 const { ApolloServer } = require("apollo-server");
 const mongoose = require("mongoose");
 const typeDefs = require("./graphql/typeDefs");
 const resolvers = require("./graphql/resolvers");
 
-const MONGODB =
-  "mongodb+srv://pjhaprakash0812:Prakash%401234@cluster0.s8i3swe.mongodb.net/?retryWrites=true&w=majority";
+const MONGODB = `mongodb+srv://poojapithva2002:pooja1234@cluster0.lc5zdxk.mongodb.net/?retryWrites=true&w=majority
+`;
 
 const server = new ApolloServer({
   typeDefs,

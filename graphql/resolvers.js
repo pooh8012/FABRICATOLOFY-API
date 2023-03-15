@@ -14,20 +14,24 @@ module.exports = {
       _,
       {
         productInput: {
-          name: name,
-          description: description,
-          price: price,
-          image: image,
-          type: type,
+          name,
+          shortDescription,
+          description,
+          price,
+          heroImage, // updated to use heroImage instead of image
+          type,
+          images, // added images field
         },
       }
     ) {
       const createdProduct = new Product({
         name,
+        shortDescription,
         description,
         price,
-        image,
+        heroImage, // updated to use heroImage instead of image
         type,
+        images, // added images field
       });
 
       const res = await createdProduct.save();
@@ -44,17 +48,30 @@ module.exports = {
     },
     async editProduct(
       _,
-      { ID, productInput: { name, description, price, image, type } }
+      {
+        ID,
+        productInput: {
+          name,
+          shortDescription,
+          description,
+          price,
+          heroImage,
+          type,
+          images,
+        },
+      }
     ) {
       const wasEdited = (
         await Product.updateOne(
           { _id: ID },
           {
-            name: name,
-            description: description,
-            price: price,
-            image: image,
-            type: type,
+            name,
+            shortDescription,
+            description,
+            price,
+            heroImage, // updated to use heroImage instead of image
+            type,
+            images, // added images field
           }
         )
       ).modifiedCount;

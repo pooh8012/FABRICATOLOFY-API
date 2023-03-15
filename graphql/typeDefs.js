@@ -3,22 +3,29 @@ const { gql } = require("apollo-server");
 module.exports = gql`
   type Product {
     name: String
+    shortDescription: String
     description: String
     price: Int
-    image: String
+    heroImage: String
     type: String
+    images: [String]
   }
+
   input ProductInput {
     name: String
+    shortDescription: String
     description: String
     price: Int
-    image: String
+    heroImage: String
     type: String
+    images: [String]
   }
+
   type Query {
     product(ID: ID!): Product!
     getProduct(amount: Int): [Product]
   }
+
   type Mutation {
     createProduct(productInput: ProductInput): Product!
     deleteProduct(ID: ID!): Boolean
