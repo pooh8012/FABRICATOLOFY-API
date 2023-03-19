@@ -3,6 +3,8 @@ const { ApolloServer } = require("apollo-server");
 const mongoose = require("mongoose");
 const typeDefs = require("./graphql/typeDefs");
 const resolvers = require("./graphql/resolvers");
+const formTypeDefs = require("./graphql/Form/typeDefs");
+const formResolvers = require("./graphql/Form/resolvers");
 
 const MONGODB = `mongodb+srv://poojapithva2002:pooja1234@cluster0.lc5zdxk.mongodb.net/?retryWrites=true&w=majority
 `;
@@ -10,6 +12,8 @@ const MONGODB = `mongodb+srv://poojapithva2002:pooja1234@cluster0.lc5zdxk.mongod
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  formTypeDefs,
+  formResolvers,
 });
 
 mongoose
