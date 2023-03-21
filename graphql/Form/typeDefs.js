@@ -8,6 +8,9 @@ module.exports = gql`
       email: String
       phoneNumber: String
       address: String
+      city: String
+      state: String
+      zipCode: String
     ): FormResult
   }
 

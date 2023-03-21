@@ -10,10 +10,8 @@ const MONGODB = `mongodb+srv://poojapithva2002:pooja1234@cluster0.lc5zdxk.mongod
 `;
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  formTypeDefs,
-  formResolvers,
+  typeDefs: [typeDefs, formTypeDefs],
+  resolvers: [resolvers, formResolvers],
 });
 
 mongoose

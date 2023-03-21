@@ -6,6 +6,9 @@ const formData = new Schema({
   email: String,
   phoneNumber: String,
   address: String,
+  city: String,
+  state: String,
+  zipCode: String,
 });
 
 module.exports = model("FormData", formData);
