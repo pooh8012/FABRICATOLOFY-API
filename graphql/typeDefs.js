@@ -2,6 +2,7 @@ const { gql } = require("apollo-server");
 
 module.exports = gql`
   type Product {
+    _id: String
     name: String
     shortDescription: String
     description: String
@@ -12,6 +13,7 @@ module.exports = gql`
   }
 
   input ProductInput {
+    _id: String
     name: String
     shortDescription: String
     description: String
