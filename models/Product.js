@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 const productSchema = new Schema({
-  _id: String,
+  _id: { type: Schema.Types.ObjectId, auto: true },
   name: String,
   shortDescription: String,
   description: String,
