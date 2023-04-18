@@ -9,6 +9,7 @@ module.exports = gql`
     heroImage: String
     type: String
     images: [String]
+    _id: ID
   }
 
   input ProductInput {
